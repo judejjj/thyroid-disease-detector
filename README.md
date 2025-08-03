@@ -2,33 +2,45 @@ Thyroid Disease Detection Using Machine Learning
 This is a mini-project aimed at detecting thyroid dysfunction (hypothyroidism, hyperthyroidism, or normal) using machine learning models trained on clinical lab data.
 
 ## 🔍 Project Overview
-Predicts thyroid status based on patient lab parameters (TSH, T3, FTI, etc.).
+This project develops a robust model to accurately classify thyroid conditions from clinical data. The primary goal is to provide a reliable tool for early and accurate diagnosis based on lab parameters.
 
-Aims for a reliable classification between Negative, Hyperthyroid, Primary Hypothyroid, and Compensated Hypothyroid.
+Key Objectives:
 
-The entire workflow is built on tabular data, with no image processing involved.
+Process and combine raw data files from the UCI Thyroid Disease dataset.
 
-The project is structured into two phases: (1) Data Preparation and (2) Model Training.
+Handle significant data quality issues, including missing values and severe class imbalance.
+
+Train and evaluate an interpretable, high-performance classification model.
+
+Structure the project into a reproducible two-notebook pipeline (data prep and model training).
 
 ## ⚙️ Tech Stack
 Language: Python
-
-Notebooks: Jupyter Notebook
 
 Core Libraries: Pandas, NumPy
 
 Machine Learning: scikit-learn, imblearn
 
-Serialization: pickle or joblib
+Development: Jupyter Notebook
 
-## ✅ Key Methodologies
+Source Control: Git & GitHub
+
+This stack was chosen as it represents the industry standard for data science, providing powerful, easy-to-use tools for every step of the machine learning workflow.
+
+## ✅ Project Workflow & Methodology
+The project is split into two distinct phases, each in its own notebook:
+
+01_Data_Preparation.ipynb: This notebook handles all data cleaning. It takes the raw .data files and produces two clean outputs: thyroid_final_cleaned.csv and target_label_encoder.pkl.
+
+02_Model_Training.ipynb: This notebook focuses on modeling. It loads the clean files, splits the data, applies SMOTE to the training set, trains the model, and evaluates its performance.
+
+Key Processing Steps:
+
 Data Combination: Merged allhyper.data and allhypo.data to create a single, comprehensive dataset.
 
-Data Cleaning: Handled inconsistencies and missing values. Numerical features were imputed using the median for robustness against outliers.
+Imputation: Filled missing numerical values (e.g., in TSH, FTI) using the median for robustness against outliers.
 
-Feature Encoding: Converted all categorical and binary features (e.g., 'sex', 'on thyroxine') into a fully numerical format suitable for machine learning.
-
-Imbalance Handling: The project addresses severe class imbalance in the dataset, a critical step for building a fair and accurate model.
+Encoding: Converted all categorical and binary features into a fully numerical format suitable for modeling.
 
 ## 🤖 Algorithms & Techniques
 The following algorithms and techniques are used in this project for classification and data balancing:
