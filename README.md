@@ -52,7 +52,7 @@ Random Forest
 SMOTE (Synthetic Minority Over-sampling Technique)
 
 ## 📊 Dataset
-Source: UCI Machine Learning Repository
+Source: [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/102/thyroid+disease)
 
 Raw Files: allhyper.data & allhypo.data
 
