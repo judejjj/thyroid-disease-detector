@@ -1,64 +1,67 @@
 Thyroid Disease Detection Using Machine Learning
-This is a mini-project aimed at detecting thyroid dysfunction (hypothyroidism, hyperthyroidism, or normal) using machine learning models trained on clinical lab data.
+
+Mini-project to detect thyroid dysfunction (hypothyroidism, hyperthyroidism, or normal) from clinical lab data using machine learning. Designed for early and accurate diagnosis.
 
 ## 🔍 Project Overview
-This project develops a robust model to accurately classify thyroid conditions from clinical data. The primary goal is to provide a reliable tool for early and accurate diagnosis based on lab parameters.
 
-Key Objectives:
+Combined and cleaned UCI Thyroid Disease raw files (allhyper.data, allhypo.data).
 
-Process and combine raw data files from the UCI Thyroid Disease dataset.
+Handled missing values (median imputation) and encoded categorical features.
 
-Handle significant data quality issues, including missing values and severe class imbalance.
+Augmented and balanced dataset to 3,768 samples using SMOTE and CTGAN, ensuring all classes are well-represented.
 
-Train and evaluate an interpretable, high-performance classification model.
+Trained and evaluated models (Decision Tree, Random Forest, XGBoost) for high accuracy.
 
-Structure the project into a reproducible two-notebook pipeline (data prep and model training).
+Final tuned model saved as thyroid_model_clinical.pkl.
 
 ## ⚙️ Tech Stack
-Language: Python
 
-Core Libraries: Pandas, NumPy
+Python | Pandas, NumPy | scikit-learn, imblearn | Jupyter Notebook | Git & GitHub
 
-Machine Learning: scikit-learn, imblearn
+## ✅ Workflow
 
-Development: Jupyter Notebook
+Data Preparation (01_Data_Preparation.ipynb)
 
-Source Control: Git & GitHub
+Merged raw files, cleaned, imputed, encoded features.
 
-This stack was chosen as it represents the industry standard for data science, providing powerful, easy-to-use tools for every step of the machine learning workflow.
+Balanced dataset (~3,768 samples) saved as thyroid_clinical_balanced.csv.
 
-## ✅ Project Workflow & Methodology
-The project is split into two distinct phases, each in its own notebook:
+Model Training (02_Model_Training.ipynb)
 
-01_Data_Preparation.ipynb: This notebook handles all data cleaning. It takes the raw .data files and produces two clean outputs: thyroid_final_cleaned.csv and target_label_encoder.pkl.
+Split data, applied SMOTE, trained and tuned models.
 
-02_Model_Training.ipynb: This notebook focuses on modeling. It loads the clean files, splits the data, applies SMOTE to the training set, trains the model, and evaluates its performance.
+Final performance:
 
-Key Processing Steps:
+Training Accuracy: 99.97%
 
-Data Combination: Merged allhyper.data and allhypo.data to create a single, comprehensive dataset.
+Test Accuracy: 97.48%
 
-Imputation: Filled missing numerical values (e.g., in TSH, FTI) using the median for robustness against outliers.
+Classification metrics (precision / recall / f1-score):
 
-Encoding: Converted all categorical and binary features into a fully numerical format suitable for modeling.
+Class 0: 0.97 / 0.98 / 0.97
 
-## 🤖 Algorithms & Techniques
-The following algorithms and techniques are used in this project for classification and data balancing:
+Class 1: 0.98 / 0.82 / 0.89
 
-Decision Tree
+Class 2: 0.98 / 0.99 / 0.99
 
-Random Forest
+Class 3: 0.95 / 0.98 / 0.96
 
-SMOTE (Synthetic Minority Over-sampling Technique)
+## 🤖 Key Techniques
+
+Decision Tree, Random Forest, XGBoost
+
+SMOTE & CTGAN for data augmentation
+
+Hyperparameter tuning, model saving, reproducible pipelines
 
 ## 📊 Dataset
-Source: [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/102/thyroid+disease)
 
-Raw Files: allhyper.data & allhypo.data
+Source: UCI Machine Learning Repository
 
-Final Cleaned File: thyroid_final_cleaned.csv
+Cleaned + balanced samples: 3,768
 
-Samples: ~2,800 after cleaning and deduplication.
+Features: 22 clinical + target (multi-class labels)
 
-## 📝 License
-This project is for academic use only.
+📝 License
+
+Academic use only.
