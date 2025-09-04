@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thyroid Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #2c3e50; }
+        form { max-width: 800px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input[type="text"], input[type="number"] { width: 100%; padding: 6px; margin-top: 4px; }
+        input[type="submit"] { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+        .prediction { margin-top: 30px; padding: 15px; border: 1px solid #ccc; background: #f9f9f9; }
+        .probabilities { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Thyroid Disease Prediction</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Upload Patient CSV (optional):</label>
+        <input type="file" name="file" accept=".csv">
+
+        <h3>Or enter patient data manually:</h3>
+        {% for feat in features %}
+            <label>{{ feat.replace("_", " ").title() }}:</label>
+            <input type="text" name="{{ feat }}" value="{{ patient_input.get(feat, '') }}">
+        {% endfor %}
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <div class="prediction">
+        <h2>Prediction Result:</h2>
+        <p><strong>Predicted Condition:</strong> {{ prediction.condition }}</p>
+        <p><strong>Confidence:</strong> {{ (prediction.confidence*100)|round(1) }}%</p>
+        <p><strong>All Probabilities:</strong></p>
+        <ul class="probabilities">
+            {% for cond, prob in prediction.all_probabilities.items() %}
+                <li>{{ cond }}: {{ (prob*100)|round(1) }}%</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
