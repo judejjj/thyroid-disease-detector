@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .result-box {
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+            font-size: 24px;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 15px;
+            color: #555;
+        }
+        p strong {
+            color: #007BFF; /* A blue color for the result */
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #28a745; /* A friendly green color */
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        a.button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h1>Prediction Result</h1>
+        <p>Predicted Thyroid Status: <strong>{{ prediction }}</strong></p>
+        <a href="{{ url_for('home') }}" class="button">Go Back</a>
+    </div>
+</body>
+</html>
