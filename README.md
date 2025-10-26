@@ -14,8 +14,9 @@ Download and install Python 3.8+ from [python.org](https://www.python.org/downlo
 **Important:** Check ✅ "Add Python to PATH" during installation!
 
 ### Step 2: Download & Extract
-1. Download this repository (click Code → Download ZIP)
-2. Extract the ZIP file to any folder
+1. Go to [Releases](https://github.com/judejjj/thyroid-disease-detector/releases/tag/release)
+2. Download the ZIP file
+3. Extract the ZIP file to any folder
 
 ### Step 3: Initial Setup (Run Once)
 **Double-click `SETUP.bat`** 
@@ -29,15 +30,6 @@ Download and install Python 3.8+ from [python.org](https://www.python.org/downlo
 - Browser opens at `http://localhost:5000`
 - Enter patient data and get predictions!
 - Press Ctrl+C to stop the server when done
-
----
-
-## 📥 Download
-
-**Download the latest release:**
-1. Go to [Releases](https://github.com/YOUR-USERNAME/YOUR-REPO/releases)
-2. Download the ZIP file
-3. Extract and follow the Quick Start steps above
 
 ---
 
