@@ -32,13 +32,12 @@ Download and install Python 3.8+ from [python.org](https://www.python.org/downlo
 
 ---
 
-## 📦 Alternative: Standalone EXE
+## 📥 Download
 
-A standalone EXE (~412 MB) is available for users who prefer not to install Python:
-
-📥 **[Download from Google Drive](YOUR_DRIVE_LINK_HERE)**
-
-⚠️ **Note:** This is a large file. For the lightweight option (~10 MB), use the BAT files above instead!
+**Download the latest release:**
+1. Go to [Releases](https://github.com/YOUR-USERNAME/YOUR-REPO/releases)
+2. Download the ZIP file
+3. Extract and follow the Quick Start steps above
 
 ---
 
